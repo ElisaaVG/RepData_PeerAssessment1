@@ -6,10 +6,6 @@
 library(lattice)
 library(plyr)
 ```
-
-```
-## Warning: package 'plyr' was built under R version 4.0.3
-```
 ### Load the data 
 
 ```r
