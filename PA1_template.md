@@ -60,7 +60,7 @@ mean(smsteps$steps,na.rm=TRUE)
 ## [1] 10766.19
 ```
 * The **mean** total number of steps taken per day is 1.0766 &times; 10<sup>4</sup> steps.
-    
+
 ### Median of the steps 
 
 ```r
@@ -71,8 +71,8 @@ median(smsteps$steps,na.rm=TRUE)
 ## [1] 10765
 ```
 * The **median** total number of steps taken per day is 
-    1.0765 &times; 10<sup>4</sup> steps.
-    
+1.0765 &times; 10<sup>4</sup> steps.
+
 ## What is the average daily activity pattern? 
 ### Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis) 
 
@@ -90,14 +90,13 @@ xyplot(mnsteps$steps ~ mnsteps$interval,type= "l", ylab="Average Steps",
 
 
 ```r
-mnsteps[mnsteps$steps==max(mnsteps$steps),]
+mnsteps[mnsteps$steps==max(mnsteps$steps),]$interval
 ```
 
 ```
-##     interval    steps
-## 104      835 206.1698
+## [1] 835
 ```
-* It is the **835, 206th** interval.
+* It is the **835th** interval.
 
 ## Imputing missing values 
 ### Calculate and report the total number of missing values in the dataset 
@@ -170,7 +169,7 @@ newMean
 ## [1] 10766.19
 ```
 * The **mean** total number of steps taken per day is 1.0766 &times; 10<sup>4</sup> steps. 
-    
+
 ### Median of the steps 
 
 ```r
@@ -182,13 +181,13 @@ newMedian
 ## [1] 10766.19
 ```
 * The **median** total number of steps taken per day is 
-    1.0766 &times; 10<sup>4</sup> steps. 
-    
+1.0766 &times; 10<sup>4</sup> steps. 
+
 ### Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps? 
 The **mean** value is the **same** as the value before imputing missing data because we put the mean value for that particular 5-min interval. The median value shows **a little** difference : but it depends on **where the missing values are**. 
 ## Are there differences in activity patterns between weekdays and weekends? 
 
-### Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day. 
+### Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day  
 
 ```r
 # Make sure we use English date names
@@ -227,3 +226,4 @@ xyplot(new_mnsteps$steps ~ new_mnsteps$interval|new_mnsteps$WD,type="l",ylab="St
 ```
 
 ![plot of chunk panel plot](figure/panel plot-1.png)
+
